@@ -13,7 +13,7 @@
 // if a situation is O(n^3) it most likely to turn out that the code is inefficient
 
 // The heap and the stack
-// The heap is usually where we store variables 
+// The heap is usually where we store variables
 // The stack is where we usueally keep track of our function calls
 //  What causes Space complexity:
 // - Variables
