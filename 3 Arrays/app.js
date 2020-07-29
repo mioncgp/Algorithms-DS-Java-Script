@@ -44,3 +44,29 @@ class MyArray {
     length--;
   }
 }
+
+// create a function that reverses a string
+// 1)
+function reversingString(string) {
+  const arr = string.split("");
+  const newArr = [];
+  while (arr.length > 0) {
+    const last = arr.pop();
+    newArr.push(last);
+  }
+  return newArr.join("");
+}
+
+// 2)
+function reversingString2(str) {
+  // check input
+  if (!str || str.length < 2 || typeof str !== "string") {
+    return "glitch";
+  }
+  const arrBackwards = [];
+  const totalNum = str.length - 1;
+  for (let i = totalNum; i >= 0; i--) {
+    arrBackwards.push(str[i]);
+  }
+  return arrBackwards.join("");
+}
