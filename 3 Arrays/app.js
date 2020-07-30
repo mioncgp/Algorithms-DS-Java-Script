@@ -70,3 +70,15 @@ function reversingString2(str) {
   }
   return arrBackwards.join("");
 }
+
+// Merge to arrays into one sorted array
+const array1 = [0, 3, 4, 31];
+const array2 = [4, 6, 30];
+
+function mergeSortedArrays(arr1, arr2) {
+  const mergedArr = [...arr1, ...arr2];
+  const sortedArr = mergedArr.sort(function (a, b) {
+    return a - b;
+  });
+  return sortedArr;
+}
