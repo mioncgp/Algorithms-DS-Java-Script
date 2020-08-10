@@ -103,12 +103,6 @@ class LinkedList {
   }
 }
 
-const lol = new LinkedList(10);
-lol.append(20);
-lol.append(30);
-lol.reverse();
-console.log(lol);
-
 // Double linked lists contain an additional pointer to the previous node.
 class DoublyLinkedList {
   constructor(value) {
