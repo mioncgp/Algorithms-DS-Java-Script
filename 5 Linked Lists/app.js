@@ -88,9 +88,11 @@ class LinkedList {
     if (!this.head.next) {
       return this.head;
     }
+
     let first = this.head;
     this.tail = this.head;
     let second = first.next;
+
     while (second) {
       const temp = second.next;
       second.next = first;
@@ -102,6 +104,13 @@ class LinkedList {
     return this.printList();
   }
 }
+
+const lol = new LinkedList(4);
+lol.append(5);
+lol.append(6);
+lol.append(7);
+lol.reverse();
+// console.log(lol.printList());
 
 // Double linked lists contain an additional pointer to the previous node.
 class DoublyLinkedList {
