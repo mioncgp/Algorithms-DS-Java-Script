@@ -19,13 +19,71 @@ class Stack {
     this.length = 0;
   }
 
-  peek() {}
+  peek() {
+    return this.top;
+  }
 
   push(value) {
     const newNode = new Node(value);
+    if (this.length === 0) {
+      this.top = newNode;
+      this.bottom = newNode;
+    } else {
+      const holdingPointer = this.top;
+      this.top = newNode;
+      this.top.next = holdingPointer;
+    }
+    length++;
+    return this;
   }
 
-  pop() {}
+  pop() {
+    if (!this.top) {
+      return null;
+    }
+    if (this.top === this.bottom) {
+      this.bottom = null;
+    }
+    const holdingPointer = this.top;
+    this.top = this.top.next;
+    this.length--;
+    return holdingPointer;
+  }
 }
 
-const stack = new Stack();
+class Queue {
+  constructor() {
+    this.first = null;
+    this.last = null;
+    this.length = 0;
+  }
+
+  peek() {
+    return this.first;
+  }
+
+  enqueue(value) {
+    const newNode = new Node(value);
+    if (this.length === 0) {
+      this.first = newNode;
+      this.last = newNode;
+    } else {
+      this.last.next = newNode;
+      this.last = newNode;
+    }
+    this.length++;
+    return this;
+  }
+
+  dequeue() {
+    if (!this.top) {
+      return null;
+    }
+    if (this.first === this.last) {
+      this.last = null;
+    }
+    this.first = this.first.next;
+    this.length--;
+    return this;
+  }
+}
