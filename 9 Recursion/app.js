@@ -13,8 +13,22 @@ function findFactorialIterative(number) {
   for (let i = 2; i <= number; i++) {
     answer = answer * i;
   }
-
   return answer;
 }
 
-console.log(findFactorialRecursive(5));
+function fibIterative(n) {
+  let arr = [0, 1];
+  for (let i = 2; i < n + 1; i++) {
+    arr.push(arr[i - 2] + arr[i - 1]);
+  }
+  return arr[n];
+}
+
+console.log(fibIterative(5));
+
+function fibonacciRecursive(n) {
+  if (n < 2) {
+    return n;
+  }
+  return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
+}
